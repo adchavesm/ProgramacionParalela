@@ -22,9 +22,9 @@ void leerImagen( char *nombreArchivo){
     char R[ancho][alto],G[ancho][alto],B[ancho][alto];
     
     
-    for (int i = 0; i < alto; i++)
+    for (int i = 0; i < ancho; i++)
     {
-         for (int j = 0; j < ancho; j++)
+         for (int j = 0; j < alto; j++)
          {
              fscanf(archivo,"%c%c%c", &R[i][j],&G[i][j],&B[i][j]);
          }
@@ -38,9 +38,9 @@ void imprimirImagen(char R[ancho][alto],char G[ancho][alto],char B[ancho][alto])
     FILE *ap;
     ap=fopen("salida.ppm","w");
     fprintf(ap,"P6\n%d %d\n255",ancho,alto);
-    for (int i = 0; i < alto; i++)
+    for (int i = 0; i < ancho; i++)
     {
-         for (int j = 0; j < ancho; j++)
+         for (int j = 0; j < alto; j++)
          {
              fprintf(ap,"%c%c%c", R[i][j],G[i][j],B[i][j]);
          }
